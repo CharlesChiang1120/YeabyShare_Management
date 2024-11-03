@@ -90,7 +90,6 @@
         <aside>
             <div class="toggle">
                 <div class="logo">
-                    <!-- <img src="images/YeabyTour.jpg"> -->
                     <h2>YeabyShare<span class="danger"></span></h2>
                 </div>
                 <div class="close" id="close-btn">
@@ -102,64 +101,40 @@
 
             <div class="sidebar">
                 <a href="index.html">
-                    <span class="material-icons-sharp">
-                        insights
-                    </span>
+                    <span class="material-icons-sharp">insights</span>
                     <h3>Analytics</h3>
                 </a>
                 <a href="dashboard.html">
-                    <span class="material-icons-sharp">
-                        dashboard
-                    </span>
+                    <span class="material-icons-sharp">dashboard</span>
                     <h3>Dashboard</h3>
                 </a>
                 <a href="user.html" class="active">
-                    <span class="material-icons-sharp">
-                        person_outline
-                    </span>
+                    <span class="material-icons-sharp">person_outline</span>
                     <h3>Users</h3>
                 </a>
                 <a href="history.html">
-                    <span class="material-icons-sharp">
-                        receipt_long
-                    </span>
+                    <span class="material-icons-sharp">receipt_long</span>
                     <h3>History</h3>
                 </a>
-                <!-- <a href="#" >
-                    <span class="material-icons-sharp">
-                        mail_outline
-                    </span>
-                    <h3>Tickets</h3>
-                </a> -->
                 <a href="sale.html">
-                    <span class="material-icons-sharp">
-                        inventory
-                    </span>
+                    <span class="material-icons-sharp">inventory</span>
                     <h3>Marketing</h3>
                     <span class="message-count">23</span>
                 </a>
                 <a href="#">
-                    <span class="material-icons-sharp">
-                        report_gmailerrorred
-                    </span>
+                    <span class="material-icons-sharp">report_gmailerrorred</span>
                     <h3>Reports</h3>
                 </a>
                 <a href="#">
-                    <span class="material-icons-sharp">
-                        settings
-                    </span>
+                    <span class="material-icons-sharp">settings</span>
                     <h3>Settings</h3>
                 </a>
                 <a href="#">
-                    <span class="material-icons-sharp">
-                        add
-                    </span>
+                    <span class="material-icons-sharp">add</span>
                     <h3>New Item</h3>
                 </a>
                 <a href="#">
-                    <span class="material-icons-sharp">
-                        logout
-                    </span>
+                    <span class="material-icons-sharp">logout</span>
                     <h3>Logout</h3>
                 </a>
             </div>
@@ -180,7 +155,7 @@
                         <option value="young_professionals">Young Professionals</option>
                         <option value="families">Families with Kids</option>
                         <option value="senior_citizens">Senior Citizens</option>
-                        <option value="senior_citizens">New User</option>
+                        <option value="new_user">New User</option>
                     </select>
                 </div>
 
@@ -192,11 +167,11 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Phone</th>
-                            <th>Registration Date</th>
+                            <th id="registrationDateHeader">Registration Date</th>
                             <th>Group</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="userTableBody">
                         <tr><td>U****001</td><td>Alex Chen</td><td class="masked">a***@example.com</td><td class="masked">+1 ***-***-1234</td><td>2023-05-10</td><td>College Students</td></tr>
                         <tr><td>U****002</td><td>Jessica Wang</td><td class="masked">j***@example.com</td><td class="masked">+1 ***-***-5678</td><td>2023-06-21</td><td>Young Professionals</td></tr>
                         <tr><td>U****003</td><td>Michael Lee</td><td class="masked">m***@example.com</td><td class="masked">+1 ***-***-3456</td><td>2023-04-30</td><td>Families with Kids</td></tr>
@@ -217,8 +192,45 @@
             </div>
         </main>
         <!-- End of Main Content -->
+        <div class="right-section">
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+                <div class="dark-mode">
+                    <span class="material-icons-sharp active">light_mode</span>
+                    <span class="material-icons-sharp">dark_mode</span>
+                </div>
 
+                <div class="profile">
+                    <div class="info">
+                        <p>Admin <b>Charles</b></p>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="images/charles.png">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- Sorting Script -->
+    <script>
+        document.getElementById("registrationDateHeader").addEventListener("click", function() {
+            const tableBody = document.getElementById("userTableBody");
+            const rows = Array.from(tableBody.querySelectorAll("tr"));
+
+            rows.sort((a, b) => {
+                const dateA = new Date(a.cells[4].innerText);
+                const dateB = new Date(b.cells[4].innerText);
+                return dateB - dateA;
+            });
+
+            // Clear and re-append sorted rows
+            tableBody.innerHTML = "";
+            rows.forEach(row => tableBody.appendChild(row));
+        });
+    </script>
 </body>
 
 </html>

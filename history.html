@@ -8,26 +8,64 @@
     <link rel="stylesheet" href="style.css">
     <title>Transaction History</title>
     <style>
-        /* Additional styling for table and centering */
+
+        /* Main Content Styling */
+        main {
+            flex: 1;
+            padding: 20px;
+            background-color: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .transaction-history {
+            width: 100%;
+            max-width: 800px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
         .transaction-history table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
+            margin-top: 10px;
         }
 
-        .transaction-history th, .transaction-history td {
-            padding: 15px 20px; /* Increase spacing */
-            text-align: center; /* Center values */
+        .transaction-history th,
+        .transaction-history td {
+            padding: 12px 15px;
+            text-align: center;
             border-bottom: 1px solid #ddd;
         }
 
         .transaction-history th {
-            background-color: #f2f2f2;
+            background-color: #f2f4f6;
+            color: #666;
             font-weight: bold;
         }
 
         .transaction-history td {
             color: #333;
+        }
+
+        /* Show All Link Styling */
+        .show-all {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .show-all a {
+            text-decoration: none;
+            color: #1e90ff;
+            font-size: 14px;
+        }
+
+        .show-all a:hover {
+            color: #0d6efd;
         }
 
     </style>
@@ -39,76 +77,49 @@
         <aside>
             <div class="toggle">
                 <div class="logo">
-                    <!-- <img src="images/YeabyTour.jpg"> -->
-                    <h2>YeabyShare<span class="danger"></span></h2>
+                    <h2>YeabyShare</h2>
                 </div>
                 <div class="close" id="close-btn">
-                    <span class="material-icons-sharp">
-                        close
-                    </span>
+                    <span class="material-icons-sharp">close</span>
                 </div>
             </div>
 
             <div class="sidebar">
                 <a href="index.html">
-                    <span class="material-icons-sharp">
-                        insights
-                    </span>
+                    <span class="material-icons-sharp">insights</span>
                     <h3>Analytics</h3>
                 </a>
                 <a href="dashboard.html">
-                    <span class="material-icons-sharp">
-                        dashboard
-                    </span>
+                    <span class="material-icons-sharp">dashboard</span>
                     <h3>Dashboard</h3>
                 </a>
                 <a href="user.html">
-                    <span class="material-icons-sharp">
-                        person_outline
-                    </span>
+                    <span class="material-icons-sharp">person_outline</span>
                     <h3>Users</h3>
                 </a>
                 <a href="#" class="active">
-                    <span class="material-icons-sharp">
-                        receipt_long
-                    </span>
+                    <span class="material-icons-sharp">receipt_long</span>
                     <h3>History</h3>
                 </a>
-                <!-- <a href="#" >
-                    <span class="material-icons-sharp">
-                        mail_outline
-                    </span>
-                    <h3>Tickets</h3>
-                </a> -->
                 <a href="sale.html">
-                    <span class="material-icons-sharp">
-                        inventory
-                    </span>
+                    <span class="material-icons-sharp">inventory</span>
                     <h3>Marketing</h3>
                     <span class="message-count">23</span>
                 </a>
                 <a href="#">
-                    <span class="material-icons-sharp">
-                        report_gmailerrorred
-                    </span>
+                    <span class="material-icons-sharp">report_gmailerrorred</span>
                     <h3>Reports</h3>
                 </a>
                 <a href="#">
-                    <span class="material-icons-sharp">
-                        settings
-                    </span>
+                    <span class="material-icons-sharp">settings</span>
                     <h3>Settings</h3>
                 </a>
                 <a href="#">
-                    <span class="material-icons-sharp">
-                        add
-                    </span>
+                    <span class="material-icons-sharp">add</span>
                     <h3>New Item</h3>
                 </a>
                 <a href="#">
-                    <span class="material-icons-sharp">
-                        logout
-                    </span>
+                    <span class="material-icons-sharp">logout</span>
                     <h3>Logout</h3>
                 </a>
             </div>
@@ -242,38 +253,29 @@
                 </div>
             </div>
         </main>
+
         <!-- Right Section -->
         <div class="right-section">
             <div class="nav">
                 <button id="menu-btn">
-                    <span class="material-icons-sharp">
-                        menu
-                    </span>
+                    <span class="material-icons-sharp">menu</span>
                 </button>
                 <div class="dark-mode">
-                    <span class="material-icons-sharp active">
-                        light_mode
-                    </span>
-                    <span class="material-icons-sharp">
-                        dark_mode
-                    </span>
+                    <span class="material-icons-sharp active">light_mode</span>
+                    <span class="material-icons-sharp">dark_mode</span>
                 </div>
 
                 <div class="profile">
                     <div class="info">
                         <p>Admin <b>Charles</b></p>
-                        <!-- <small class="text-muted"></small> -->
                     </div>
                     <div class="profile-photo">
                         <img src="images/charles.png">
                     </div>
                 </div>
-
             </div>
-            <!-- End of Nav -->
+        </div>
     </div>
-
-    <script src="index.js"></script>
 </body>
 
 </html>
