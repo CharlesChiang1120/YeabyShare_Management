@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Tracking</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Section -->
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <h2>YeabyShare</h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">close</span>
+                </div>
+            </div>
+            <div class="sidebar">
+                <a href="index.html">
+                    <span class="material-icons-sharp">insights</span>
+                    <h3>Analytics</h3>
+                </a>
+                <a href="dashboard.html">
+                    <span class="material-icons-sharp">dashboard</span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="user.html">
+                    <span class="material-icons-sharp">person_outline</span>
+                    <h3>Users</h3>
+                </a>
+                <a href="history.html">
+                    <span class="material-icons-sharp">receipt_long</span>
+                    <h3>History</h3>
+                </a>
+                <a href="track.html" class="active">
+                    <span class="material-icons-sharp">sensors</span>
+                    <h3>Tracking</h3>
+                </a>
+                <a href="comment.html">
+                    <span class="material-icons-sharp">comment</span>
+                    <h3>Comment</h3>
+                    <span class="message-count">20</span></a>
+                </a>
+                <a href="sale.html">
+                    <span class="material-icons-sharp">inventory</span>
+                    <h3>Marketing</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">report_gmailerrorred</span>
+                    <h3>Reports</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">settings</span>
+                    <h3>Settings</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">add</span>
+                    <h3>New Item</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">logout</span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content Section -->
+        <main class="main-content">
+            <style>
+                .main-content {
+                    font-family: 'Poppins', sans-serif;
+                    color: #333;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 100%;
+                    padding: 20px;
+                    box-sizing: border-box;
+                }
+
+                .main-content h1, .main-content h2 {
+                    font-weight: 600;
+                    color: #2C3E50;
+                    margin: 10px 0;
+                }
+
+                .journey-section {
+                    width: 90%;
+                    max-width: 1200px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-bottom: 30px;
+                }
+
+                .journey-container {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr); /* Four cards per row */
+                    gap: 20px;
+                    width: 100%;
+                }
+
+                .journey-card {
+                    background-color: #FFFFFF;
+                    border-radius: 10px;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                    padding: 20px;
+                    text-align: center;
+                    position: relative;
+                }
+
+                .journey-card h3 {
+                    font-size: 0.9em;
+                    color: #2C3E50;
+                    margin-bottom: 10px;
+                    word-break: break-word;
+                }
+
+                .time-info {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+                    margin: 10px 0;
+                    padding: 8px;
+                    background-color: #F7F9FB;
+                    border-radius: 8px;
+                    color: #2C3E50;
+                }
+
+                .alert {
+                    padding: 10px;
+                    margin-top: 15px;
+                    border-radius: 8px;
+                    background-color: #ffeded;
+                    color: #c62828;
+                    font-weight: bold;
+                }
+            </style>
+            <!-- <h1>Journey Monitoring</h1> -->
+
+            <!-- Normal Journeys Section -->
+            <div class="journey-section">
+                <h2>On Track Journeys</h2>
+                <div class="journey-container" id="onTrackContainer">
+                    <!-- Static dummy data for On Track Journeys -->
+                    <div class="journey-card">
+                        <h3>UUID: 8f2a1f4a-5d62-4f88-a93b-6587f3c9e05d</h3>
+                        <div class="time-info">
+                            <span>Start Time: 08:30 AM</span>
+                            <span>Predicted Arrival: 09:15 AM</span>
+                            <span>Current Time: 08:50 AM</span>
+                        </div>
+                    </div>
+                    <div class="journey-card">
+                        <h3>UUID: c7b9b0a3-48a7-4b8d-b72e-02193d2db5d4</h3>
+                        <div class="time-info">
+                            <span>Start Time: 07:45 AM</span>
+                            <span>Predicted Arrival: 08:30 AM</span>
+                            <span>Current Time: 08:10 AM</span>
+                        </div>
+                    </div>
+                    <div class="journey-card">
+                        <h3>UUID: b0f1e96b-4f6d-4561-bcf8-86e89c1edaf3</h3>
+                        <div class="time-info">
+                            <span>Start Time: 09:00 AM</span>
+                            <span>Predicted Arrival: 09:45 AM</span>
+                            <span>Current Time: 09:20 AM</span>
+                        </div>
+                    </div>
+                    <div class="journey-card">
+                        <h3>UUID: d4e7a8b6-5d5c-4321-914d-7f6d4b3c2a8e</h3>
+                        <div class="time-info">
+                            <span>Start Time: 02:15 PM</span>
+                            <span>Predicted Arrival: 03:00 PM</span>
+                            <span>Current Time: 02:45 PM</span>
+                        </div>
+                    </div>
+                    <div class="journey-card">
+                        <h3>UUID: e5a9c7b2-4b2e-4f9f-8c7a-0a4f5b2d3c1e</h3>
+                        <div class="time-info">
+                            <span>Start Time: 10:30 AM</span>
+                            <span>Predicted Arrival: 11:15 AM</span>
+                            <span>Current Time: 10:50 AM</span>
+                        </div>
+                    </div>
+                    <div class="journey-card">
+                        <h3>UUID: f3b1e4d6-7e8f-42a5-b6f4-3c1a8d9b2f0e</h3>
+                        <div class="time-info">
+                            <span>Start Time: 03:45 PM</span>
+                            <span>Predicted Arrival: 04:30 PM</span>
+                            <span>Current Time: 04:05 PM</span>
+                        </div>
+                    </div>
+                    <div class="journey-card">
+                        <h3>UUID: a7c3f6d5-2a9e-4e7f-9d1c-8f3b2d5c4a1e</h3>
+                        <div class="time-info">
+                            <span>Start Time: 05:00 PM</span>
+                            <span>Predicted Arrival: 05:45 PM</span>
+                            <span>Current Time: 05:20 PM</span>
+                        </div>
+                    </div>
+                    <div class="journey-card">
+                        <h3>UUID: a7c4e3fa-2be1-44e9-bb65-8d52b5294f45</h3>
+                        <div class="time-info">
+                            <span>Start Time: 08:15 AM</span>
+                            <span>Predicted Arrival: 09:00 AM</span>
+                            <span>Current Time: 08:40 AM</span>
+                        </div>
+                    </div>
+                    <div class="journey-card">
+                        <h3>UUID: e1bafdbd-8f62-4c09-9b8a-01e5f2f7a2e1</h3>
+                        <div class="time-info">
+                            <span>Start Time: 10:00 AM</span>
+                            <span>Predicted Arrival: 10:45 AM</span>
+                            <span>Current Time: 10:20 AM</span>
+                        </div>
+                    </div>
+                    <div class="journey-card">
+                        <h3>UUID: 4e1c9d6e-7d8c-4f3f-abc2-001f3b4b9d9f</h3>
+                        <div class="time-info">
+                            <span>Start Time: 11:15 AM</span>
+                            <span>Predicted Arrival: 12:00 PM</span>
+                            <span>Current Time: 11:35 AM</span>
+                        </div>
+                    </div>
+                    <div class="journey-card">
+                        <h3>UUID: 6f1b8a6e-1234-4f3d-bb65-12345f2d7e9a</h3>
+                        <div class="time-info">
+                            <span>Start Time: 12:00 PM</span>
+                            <span>Predicted Arrival: 12:45 PM</span>
+                            <span>Current Time: 12:15 PM</span>
+                        </div>
+                    </div>
+                    <div class="journey-card">
+                        <h3>UUID: a2d4f6a7-89b1-4c5a-b5c1-7a8f5b2d3a9f</h3>
+                        <div class="time-info">
+                            <span>Start Time: 06:45 AM</span>
+                            <span>Predicted Arrival: 07:30 AM</span>
+                            <span>Current Time: 07:10 AM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alerted Journeys Section -->
+            <div class="journey-section">
+                <h2>Alerted Journeys</h2>
+                <div class="journey-container" id="alertContainer">
+                    <!-- Static dummy data for Alerted Journey -->
+                    <div class="journey-card">
+                        <h3>UUID: d9c2f4d5-2e1f-41e5-aed7-4a6f5e1d9b0b</h3>
+                        <div class="time-info">
+                            <span>Start Time: 06:30 AM</span>
+                            <span>Predicted Arrival: 07:15 AM</span>
+                            <span>Current Time: 08:00 AM</span>
+                        </div>
+                        <div class="alert">Alert! Journey is off by more than 30 mins.</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="right-section">
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">
+                        menu
+                    </span>
+                </button>
+                <div class="dark-mode">
+                    <span class="material-icons-sharp active">
+                        light_mode
+                    </span>
+                    <span class="material-icons-sharp">
+                        dark_mode
+                    </span>
+                </div>
+
+                <div class="profile">
+                    <div class="info">
+                        <p>Admin <b>Charles</b></p>
+                        <small class="text-muted"></small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="images/charles.png">
+                    </div>
+                </div>
+
+            </div>
+    </div>
+</body>
+</html>

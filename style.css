@@ -454,16 +454,20 @@ main .recent-orders a{
     transition: all 0.3s ease;
 }
 
-.right-section .user-profile:hover {
-    box-shadow: none;
+.right-section .user-profile .profile-photo-wrapper {
+    width: 11rem;
+    height: 11rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 50%; /* Ensures the wrapper is circular */
 }
 
 .right-section .user-profile img {
-    width: 11rem;
-    height: 11rem;
-    margin-bottom: 0.8rem;
-    border-radius: 50%;
-    object-fit: cover; 
+    width: 100%; /* Scale to the wrapper */
+    height: auto;
+    object-fit: cover; /* Fills the circular frame */
 }
 
 .right-section .user-profile h2 {
