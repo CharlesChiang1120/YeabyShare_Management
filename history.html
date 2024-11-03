@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Transaction History</title>
+    <style>
+        /* Additional styling for table and centering */
+        .transaction-history table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .transaction-history th, .transaction-history td {
+            padding: 15px 20px; /* Increase spacing */
+            text-align: center; /* Center values */
+            border-bottom: 1px solid #ddd;
+        }
+
+        .transaction-history th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        .transaction-history td {
+            color: #333;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar Section -->
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <!-- <img src="images/YeabyTour.jpg"> -->
+                    <h2>YeabyShare<span class="danger"></span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">
+                        close
+                    </span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="index.html">
+                    <span class="material-icons-sharp">
+                        insights
+                    </span>
+                    <h3>Analytics</h3>
+                </a>
+                <a href="dashboard.html">
+                    <span class="material-icons-sharp">
+                        dashboard
+                    </span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="user.html">
+                    <span class="material-icons-sharp">
+                        person_outline
+                    </span>
+                    <h3>Users</h3>
+                </a>
+                <a href="#" class="active">
+                    <span class="material-icons-sharp">
+                        receipt_long
+                    </span>
+                    <h3>History</h3>
+                </a>
+                <!-- <a href="#" >
+                    <span class="material-icons-sharp">
+                        mail_outline
+                    </span>
+                    <h3>Tickets</h3>
+                </a> -->
+                <a href="sale.html">
+                    <span class="material-icons-sharp">
+                        inventory
+                    </span>
+                    <h3>Marketing</h3>
+                    <span class="message-count">23</span>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        report_gmailerrorred
+                    </span>
+                    <h3>Reports</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        settings
+                    </span>
+                    <h3>Settings</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        add
+                    </span>
+                    <h3>New Item</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        logout
+                    </span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main>
+            <h1>Transaction History</h1>
+            <div class="transaction-history">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>UUID</th>
+                            <th>Order Status</th>
+                            <th>Price</th>
+                            <th>Passengers</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>872f0d38-d517-47a0-bdf0-7fd61ca2b2e4</td>
+                            <td>close</td>
+                            <td>660</td>
+                            <td>3</td>
+                            <td>2024-12-14</td>
+                        </tr>
+                        <tr>
+                            <td>2d9263e5-64ad-4aef-a5cb-264e947cf591</td>
+                            <td>close</td>
+                            <td>225</td>
+                            <td>3</td>
+                            <td>2024-12-14</td>
+                        </tr>
+                        <tr>
+                            <td>9aa104ab-2cf6-4892-b436-3050cdf32fb3</td>
+                            <td>close</td>
+                            <td>470</td>
+                            <td>4</td>
+                            <td>2024-12-14</td>
+                        </tr>
+                        <tr>
+                            <td>c182beaa-2ce7-48fd-9f1b-a87792eb783d</td>
+                            <td>close</td>
+                            <td>225</td>
+                            <td>4</td>
+                            <td>2024-12-14</td>
+                        </tr>
+                        <tr>
+                            <td>87017382-0020-482d-a77f-40501d1c9f28</td>
+                            <td>close</td>
+                            <td>465</td>
+                            <td>2</td>
+                            <td>2024-12-14</td>
+                        </tr>
+                        <tr>
+                            <td>e9ec5ab8-0fcc-42d8-96aa-113a1bccd768</td>
+                            <td>close</td>
+                            <td>440</td>
+                            <td>4</td>
+                            <td>2024-12-14</td>
+                        </tr>
+                        <tr>
+                            <td>98a6a76a-0fde-4ddc-9a1b-913d700c7d12</td>
+                            <td>close</td>
+                            <td>265</td>
+                            <td>3</td>
+                            <td>2024-12-14</td>
+                        </tr>
+                        <tr>
+                            <td>4c6c8b01-fb0c-44ca-b327-f623c0553ec4</td>
+                            <td>close</td>
+                            <td>290</td>
+                            <td>4</td>
+                            <td>2024-12-14</td>
+                        </tr>
+                        <tr>
+                            <td>0398b4d2-99f8-432f-9d7b-596166dceaaa</td>
+                            <td>close</td>
+                            <td>210</td>
+                            <td>3</td>
+                            <td>2024-12-14</td>
+                        </tr>
+                        <tr>
+                            <td>56b3b58c-60a6-437d-b42d-fb62aabed6a6</td>
+                            <td>close</td>
+                            <td>615</td>
+                            <td>2</td>
+                            <td>2024-12-14</td>
+                        </tr>
+                        <tr>
+                            <td>6255c39a-07b9-45b1-978a-1aaa53072480</td>
+                            <td>close</td>
+                            <td>180</td>
+                            <td>3</td>
+                            <td>2024-12-14</td>
+                        </tr>
+                        <tr>
+                            <td>9ff0dde8-89a9-4ab5-83a3-6378ade98e00</td>
+                            <td>close</td>
+                            <td>700</td>
+                            <td>3</td>
+                            <td>2024-12-14</td>
+                        </tr>
+                        <tr>
+                            <td>ca481fcc-4132-47c2-b92c-86fb894c8fab</td>
+                            <td>close</td>
+                            <td>165</td>
+                            <td>4</td>
+                            <td>2024-12-14</td>
+                        </tr>
+                        <tr>
+                            <td>e5e99cff-776b-465d-84ff-2eb79913e49d</td>
+                            <td>close</td>
+                            <td>380</td>
+                            <td>4</td>
+                            <td>2024-12-14</td>
+                        </tr>
+                        <tr>
+                            <td>695da184-03ae-45ad-af56-9ceb69f70ecb</td>
+                            <td>close</td>
+                            <td>310</td>
+                            <td>4</td>
+                            <td>2024-12-14</td>
+                        </tr>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="show-all">
+                    <a href="#">Show All</a>
+                </div>
+            </div>
+        </main>
+        <!-- Right Section -->
+        <div class="right-section">
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">
+                        menu
+                    </span>
+                </button>
+                <div class="dark-mode">
+                    <span class="material-icons-sharp active">
+                        light_mode
+                    </span>
+                    <span class="material-icons-sharp">
+                        dark_mode
+                    </span>
+                </div>
+
+                <div class="profile">
+                    <div class="info">
+                        <p>Admin <b>Charles</b></p>
+                        <!-- <small class="text-muted"></small> -->
+                    </div>
+                    <div class="profile-photo">
+                        <img src="images/charles.png">
+                    </div>
+                </div>
+
+            </div>
+            <!-- End of Nav -->
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

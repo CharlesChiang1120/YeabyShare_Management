@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Load Chart.js -->
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar Section -->
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <!-- <img src="images/YeabyTour.jpg"> -->
+                    <h2>YeabyShare<span class="danger"></span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">
+                        close
+                    </span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="index.html">
+                    <span class="material-icons-sharp">
+                        insights
+                    </span>
+                    <h3>Analytics</h3>
+                </a>
+                <a href="#"  class="active">
+                    <span class="material-icons-sharp">
+                        dashboard
+                    </span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="user.html">
+                    <span class="material-icons-sharp">
+                        person_outline
+                    </span>
+                    <h3>Users</h3>
+                </a>
+                <a href="history.html">
+                    <span class="material-icons-sharp">
+                        receipt_long
+                    </span>
+                    <h3>History</h3>
+                </a>
+                <!-- <a href="#" >
+                    <span class="material-icons-sharp">
+                        mail_outline
+                    </span>
+                    <h3>Tickets</h3>
+                </a> -->
+                <a href="sale.html">
+                    <span class="material-icons-sharp">
+                        inventory
+                    </span>
+                    <h3>Marketing</h3>
+                    <span class="message-count">23</span>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        report_gmailerrorred
+                    </span>
+                    <h3>Reports</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        settings
+                    </span>
+                    <h3>Settings</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        add
+                    </span>
+                    <h3>New Item</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        logout
+                    </span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main>
+            <h1>Dashboard</h1>
+
+            <!-- Monthly Taxi Ride Trends (Line Chart) -->
+            <div class="chart-container">
+                <h2>Monthly Taxi Ride Case</h2>
+                <canvas id="taxiTrendsChart"></canvas>
+                <canvas id="taxiTrendsChart" width="400" height="200"></canvas> 
+            </div>
+
+            <!-- User Growth (Curve and Bar Charts) -->
+            <div class="chart-container">
+                <h2>User Growth</h2>
+                <canvas id="userGrowthCurveChart"></canvas>
+                <canvas id="taxiTrendsChart" width="400" height="200"></canvas> 
+            </div>
+
+            <!-- Monthly Revenue (Bar Chart) -->
+            <div class="chart-container">
+                <h2>Monthly Revenue (thousand)</h2>
+                <canvas id="revenueChart"></canvas>
+                <canvas id="taxiTrendsChart" width="200" height="100"></canvas> 
+            </div>
+        </main>
+
+        <div class="right-section">
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">
+                        menu
+                    </span>
+                </button>
+                <div class="dark-mode">
+                    <span class="material-icons-sharp active">
+                        light_mode
+                    </span>
+                    <span class="material-icons-sharp">
+                        dark_mode
+                    </span>
+                </div>
+
+                <div class="profile">
+                    <div class="info">
+                        <p>Admin <b>Charles</b></p>
+                        <!-- <small class="text-muted"></small> -->
+                    </div>
+                    <div class="profile-photo">
+                        <img src="images/charles.png">
+                    </div>
+                </div>
+
+            </div>
+            <!-- End of Nav -->
+    </div>
+
+    <script>
+        // Taxi Ride Trends Line Chart
+        const taxiTrendsCtx = document.getElementById('taxiTrendsChart').getContext('2d');
+    new Chart(taxiTrendsCtx, {
+        type: 'line',
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+            datasets: [{
+                label: 'Rides',
+                data: [150000, 250000, 180000, 300000, 220000, 350000, 400000, 270000, 600000, 500000, 800000, 300000], // Adjusted data for variation
+                borderColor: '#1e90ff',
+                fill: false
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        callback: function(value) {
+                            return value.toLocaleString(); // Format y-axis numbers with commas
+                        }
+                    }
+                }
+            },
+            plugins: { legend: { display: false } }
+        }
+    });
+
+    // User Growth Curve Chart
+    const userGrowthCurveCtx = document.getElementById('userGrowthCurveChart').getContext('2d');
+    new Chart(userGrowthCurveCtx, {
+        type: 'line',
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+            datasets: [{
+                label: 'New Users',
+                data: [1200, 2000, 4000, 6000, 8000, 7500, 9000, 8500, 10000, 9500, 5000, 4000], // Adjusted data for variation
+                borderColor: '#4caf50',
+                fill: false
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        callback: function(value) {
+                            return value.toLocaleString(); // Format y-axis numbers with commas
+                        }
+                    }
+                }
+            },
+            plugins: { legend: { display: false } }
+        }
+    });
+
+        // Monthly Revenue Bar Chart
+        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+        new Chart(revenueCtx, {
+            type: 'bar',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                datasets: [{
+                    label: 'Revenue',
+                    data: [5000, 6000, 5500, 7000, 8000, 7500, 8500, 9000, 9500, 10000, 10500, 11000],
+                    backgroundColor: '#ff6384'
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: false } }
+            }
+        });
+    </script>
+</body>
+
+</html>

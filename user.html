@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>User Management</title>
+    <style>
+        /* Main Layout */
+        .container {
+            display: flex;
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        .main-content {
+            width: 100%;
+            max-width: 1000px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            box-sizing: border-box;
+            margin: auto;
+        }
+
+        .main-content h2 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .search-filter {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .search-filter input, .search-filter select {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #dcdde1;
+            border-radius: 8px;
+            background-color: #ecf0f1;
+        }
+
+        /* User Table */
+        .user-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .user-table th, .user-table td {
+            padding: 12px;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: left;
+        }
+
+        .user-table th {
+            background-color: #f9f9f9;
+            font-weight: bold;
+        }
+
+        .user-table tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Sensitive Data Styling */
+        .masked {
+            color: #888;
+            font-style: italic;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        
+        <!-- Sidebar Section -->
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <!-- <img src="images/YeabyTour.jpg"> -->
+                    <h2>YeabyShare<span class="danger"></span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">
+                        close
+                    </span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="index.html">
+                    <span class="material-icons-sharp">
+                        insights
+                    </span>
+                    <h3>Analytics</h3>
+                </a>
+                <a href="dashboard.html">
+                    <span class="material-icons-sharp">
+                        dashboard
+                    </span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="user.html" class="active">
+                    <span class="material-icons-sharp">
+                        person_outline
+                    </span>
+                    <h3>Users</h3>
+                </a>
+                <a href="history.html">
+                    <span class="material-icons-sharp">
+                        receipt_long
+                    </span>
+                    <h3>History</h3>
+                </a>
+                <!-- <a href="#" >
+                    <span class="material-icons-sharp">
+                        mail_outline
+                    </span>
+                    <h3>Tickets</h3>
+                </a> -->
+                <a href="sale.html">
+                    <span class="material-icons-sharp">
+                        inventory
+                    </span>
+                    <h3>Marketing</h3>
+                    <span class="message-count">23</span>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        report_gmailerrorred
+                    </span>
+                    <h3>Reports</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        settings
+                    </span>
+                    <h3>Settings</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        add
+                    </span>
+                    <h3>New Item</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        logout
+                    </span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+
+
+        <!-- Main Content -->
+        <main>
+            <div class="main-content">
+                <h2>User Management</h2>
+
+                <!-- Search and Filter Section -->
+                <div class="search-filter">
+                    <input type="text" placeholder="Search by user name or ID">
+                    <select>
+                        <option value="all">All User Groups</option>
+                        <option value="college_students">College Students</option>
+                        <option value="young_professionals">Young Professionals</option>
+                        <option value="families">Families with Kids</option>
+                        <option value="senior_citizens">Senior Citizens</option>
+                        <option value="senior_citizens">New User</option>
+                    </select>
+                </div>
+
+                <!-- User Table -->
+                <table class="user-table">
+                    <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Registration Date</th>
+                            <th>Group</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>U****001</td><td>Alex Chen</td><td class="masked">a***@example.com</td><td class="masked">+1 ***-***-1234</td><td>2023-05-10</td><td>College Students</td></tr>
+                        <tr><td>U****002</td><td>Jessica Wang</td><td class="masked">j***@example.com</td><td class="masked">+1 ***-***-5678</td><td>2023-06-21</td><td>Young Professionals</td></tr>
+                        <tr><td>U****003</td><td>Michael Lee</td><td class="masked">m***@example.com</td><td class="masked">+1 ***-***-3456</td><td>2023-04-30</td><td>Families with Kids</td></tr>
+                        <tr><td>U****004</td><td>Sarah Yu</td><td class="masked">s***@example.com</td><td class="masked">+1 ***-***-7890</td><td>2023-02-15</td><td>Senior Citizens</td></tr>
+                        <tr><td>U****005</td><td>Daniel Kim</td><td class="masked">d***@example.com</td><td class="masked">+1 ***-***-2345</td><td>2023-07-22</td><td>College Students</td></tr>
+                        <tr><td>U****006</td><td>Emily Zhang</td><td class="masked">e***@example.com</td><td class="masked">+1 ***-***-6789</td><td>2023-09-05</td><td>Young Professionals</td></tr>
+                        <tr><td>U****007</td><td>Tom Liu</td><td class="masked">t***@example.com</td><td class="masked">+1 ***-***-4567</td><td>2023-10-01</td><td>Senior Citizens</td></tr>
+                        <tr><td>U****008</td><td>Amy Lin</td><td class="masked">a***@example.com</td><td class="masked">+1 ***-***-3210</td><td>2023-08-12</td><td>Families with Kids</td></tr>
+                        <tr><td>U****009</td><td>Brian Tan</td><td class="masked">b***@example.com</td><td class="masked">+1 ***-***-6543</td><td>2023-01-10</td><td>College Students</td></tr>
+                        <tr><td>U****012</td><td>Julia Chen</td><td class="masked">j***@example.com</td><td class="masked">+1 ***-***-4321</td><td>2023-05-08</td><td>Senior Citizens</td></tr>
+                        <tr><td>U****013</td><td>David Wu</td><td class="masked">d***@example.com</td><td class="masked">+1 ***-***-8765</td><td>2023-02-18</td><td>College Students</td></tr>
+                        <tr><td>U****014</td><td>Grace Choi</td><td class="masked">g***@example.com</td><td class="masked">+1 ***-***-2345</td><td>2023-07-25</td><td>Young Professionals</td></tr>
+                        <tr><td>U****015</td><td>Steven Lee</td><td class="masked">s***@example.com</td><td class="masked">+1 ***-***-6789</td><td>2023-10-09</td><td>Senior Citizens</td></tr>
+                        <tr><td>U****016</td><td>Helen Sun</td><td class="masked">h***@example.com</td><td class="masked">+1 ***-***-4567</td><td>2024-11-01</td><td>New User</td></tr>
+                        <tr><td>U****017</td><td>Sam Zhou</td><td class="masked">s***@example.com</td><td class="masked">+1 ***-***-3456</td><td>2024-11-03</td><td>New User</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+        <!-- End of Main Content -->
+
+    </div>
+</body>
+
+</html>
