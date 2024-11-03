@@ -7,10 +7,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Dashboard</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Load Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <style>
-
         main {
             flex: 1;
             padding: 20px;
@@ -19,26 +18,21 @@
             gap: 20px;
         }
 
-        h1 {
-            font-size: 28px;
-            color: #2c3e50;
-            text-align: center;
-        }
-
-        /* Chart Containers */
         .chart-row {
             display: flex;
             justify-content: space-between;
             gap: 20px;
+            flex-wrap: wrap;
         }
 
         .chart-container {
-            flex: 1;
+            flex: 1 1 45%;
             background-color: #fff;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             padding: 20px;
             text-align: center;
+            margin-bottom: 20px;
         }
 
         .chart-container h2 {
@@ -51,234 +45,166 @@
             max-width: 100%;
             max-height: 200px;
         }
-
     </style>
 </head>
 
 <body>
     <div class="container">
-        <!-- Sidebar Section -->
         <aside>
             <div class="toggle">
                 <div class="logo">
-                    <h2>YeabyShare<span class="danger"></span></h2>
+                    <h2>YeabyShare</h2>
                 </div>
                 <div class="close" id="close-btn">
                     <span class="material-icons-sharp">close</span>
                 </div>
             </div>
-
             <div class="sidebar">
-                <a href="index.html">
-                    <span class="material-icons-sharp">insights</span>
-                    <h3>Analytics</h3>
-                </a>
-                <a href="#" class="active">
-                    <span class="material-icons-sharp">dashboard</span>
-                    <h3>Dashboard</h3>
-                </a>
-                <a href="user.html">
-                    <span class="material-icons-sharp">person_outline</span>
-                    <h3>Users</h3>
-                </a>
-                <a href="history.html">
-                    <span class="material-icons-sharp">receipt_long</span>
-                    <h3>History</h3>
-                    <span class="message-count">63</span>
-                </a>
-                <a href="sale.html">
-                    <span class="material-icons-sharp">inventory</span>
-                    <h3>Marketing</h3>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">report_gmailerrorred</span>
-                    <h3>Reports</h3>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">settings</span>
-                    <h3>Settings</h3>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">add</span>
-                    <h3>New Item</h3>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">logout</span>
-                    <h3>Logout</h3>
-                </a>
+                <a href="index.html"><span class="material-icons-sharp">insights</span><h3>Analytics</h3></a>
+                <a href="#" class="active"><span class="material-icons-sharp">dashboard</span><h3>Dashboard</h3></a>
+                <a href="user.html"><span class="material-icons-sharp">person_outline</span><h3>Users</h3></a>
+                <a href="history.html"><span class="material-icons-sharp">receipt_long</span><h3>History</h3><span class="message-count">63</span></a>
+                <a href="sale.html"><span class="material-icons-sharp">inventory</span><h3>Marketing</h3></a>
+                <a href="#"><span class="material-icons-sharp">report_gmailerrorred</span><h3>Reports</h3></a>
+                <a href="#"><span class="material-icons-sharp">settings</span><h3>Settings</h3></a>
+                <a href="#"><span class="material-icons-sharp">add</span><h3>New Item</h3></a>
+                <a href="#"><span class="material-icons-sharp">logout</span><h3>Logout</h3></a>
             </div>
         </aside>
 
-        <!-- Main Content -->
         <main>
-            <h1>Dashboard</h1>
-
-            <!-- Row 1 -->
+            <!-- Original Charts -->
             <div class="chart-row">
-                <!-- Monthly Taxi Ride Trends (Line Chart) -->
                 <div class="chart-container">
                     <h2>Monthly Taxi Ride Cases</h2>
                     <canvas id="taxiTrendsChart"></canvas>
                 </div>
-
-                <!-- User Growth (Curve Chart) -->
                 <div class="chart-container">
                     <h2>User Growth</h2>
                     <canvas id="userGrowthCurveChart"></canvas>
                 </div>
             </div>
 
-            <!-- Row 2 -->
             <div class="chart-row">
-                <!-- Monthly Revenue (Bar Chart) -->
                 <div class="chart-container">
                     <h2>Monthly Revenue (thousand)</h2>
                     <canvas id="revenueChart"></canvas>
                 </div>
-
-                <!-- User Growth (Bar Chart) -->
                 <div class="chart-container">
                     <h2>User Monthly Addition</h2>
                     <canvas id="userGrowthBarChart"></canvas>
                 </div>
             </div>
+
+            <!-- Additional Charts for AI Predictions and Ridesharing Metrics -->
+            <div class="chart-row">
+                <div class="chart-container">
+                    <h2>AI-Based Demand Forecast</h2>
+                    <canvas id="demandForecastChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h2>Average Ride Matching Time</h2>
+                    <canvas id="matchingTimeChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-row">
+                <div class="chart-container">
+                    <h2>Predicted User Satisfaction</h2>
+                    <canvas id="satisfactionChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h2>Completed Rides vs Cancellations</h2>
+                    <canvas id="ridesCancellationsChart"></canvas>
+                </div>
+            </div>
         </main>
 
-        <!-- Right Section -->
         <div class="right-section">
             <div class="nav">
                 <button id="menu-btn">
-                    <span class="material-icons-sharp">
-                        menu
-                    </span>
+                    <span class="material-icons-sharp">menu</span>
                 </button>
                 <div class="dark-mode">
-                    <span class="material-icons-sharp active">
-                        light_mode
-                    </span>
-                    <span class="material-icons-sharp">
-                        dark_mode
-                    </span>
+                    <span class="material-icons-sharp active">light_mode</span>
+                    <span class="material-icons-sharp">dark_mode</span>
                 </div>
-
                 <div class="profile">
                     <div class="info">
                         <p>Admin <b>Charles</b></p>
-                        <small class="text-muted"></small>
                     </div>
                     <div class="profile-photo">
                         <img src="images/charles.png">
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
 
     <!-- Chart.js Configuration -->
     <script>
+        // Original Charts
         // Taxi Ride Trends Line Chart
         const taxiTrendsCtx = document.getElementById('taxiTrendsChart').getContext('2d');
         new Chart(taxiTrendsCtx, {
             type: 'line',
-            data: {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-                datasets: [{
-                    label: 'Rides',
-                    data: [150000, 250000, 180000, 300000, 220000, 350000, 400000, 270000, 600000, 500000, 800000, 300000],
-                    borderColor: '#1e90ff',
-                    pointBackgroundColor: '#1e90ff',
-                    pointBorderColor: '#fff',
-                    pointRadius: 5,
-                    fill: false
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: { display: false },
-                    tooltip: { enabled: true }
-                },
-                scales: {
-                    y: { beginAtZero: true }
-                }
-            }
+            data: { labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], datasets: [{ label: 'Rides', data: [150000, 250000, 180000, 300000, 220000, 350000, 400000, 270000, 600000, 500000, 800000, 300000], borderColor: '#1e90ff', fill: false }] },
+            options: { scales: { y: { beginAtZero: true } } }
         });
 
         // User Growth Curve Chart
         const userGrowthCurveCtx = document.getElementById('userGrowthCurveChart').getContext('2d');
         new Chart(userGrowthCurveCtx, {
             type: 'line',
-            data: {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-                datasets: [{
-                    label: 'New Users',
-                    data: [1200, 2000, 4000, 6000, 8000, 7500, 9000, 8500, 10000, 9500, 5000, 4000],
-                    borderColor: '#4caf50',
-                    pointBackgroundColor: '#4caf50',
-                    pointBorderColor: '#fff',
-                    pointRadius: 5,
-                    fill: false
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: { display: false },
-                    tooltip: { enabled: true }
-                },
-                scales: {
-                    y: { beginAtZero: true }
-                }
-            }
+            data: { labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], datasets: [{ label: 'New Users', data: [1200, 2000, 4000, 6000, 8000, 7500, 9000, 8500, 10000, 9500, 5000, 4000], borderColor: '#4caf50', fill: false }] },
+            options: { scales: { y: { beginAtZero: true } } }
         });
 
         // Monthly Revenue Bar Chart
         const revenueCtx = document.getElementById('revenueChart').getContext('2d');
         new Chart(revenueCtx, {
             type: 'bar',
-            data: {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-                datasets: [{
-                    label: 'Revenue (in thousands)',
-                    data: [5, 6, 5.5, 7, 8, 7.5, 8.5, 9, 9.5, 10, 10.5, 11],
-                    backgroundColor: '#ff6384'
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: { display: false },
-                    tooltip: { enabled: true }
-                },
-                scales: {
-                    y: { beginAtZero: true }
-                }
-            }
+            data: { labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], datasets: [{ label: 'Revenue (in thousands)', data: [5, 6, 5.5, 7, 8, 7.5, 8.5, 9, 9.5, 10, 10.5, 11], backgroundColor: '#ff6384' }] },
+            options: { scales: { y: { beginAtZero: true } } }
         });
 
         // User Monthly Addition Bar Chart
         const userGrowthBarCtx = document.getElementById('userGrowthBarChart').getContext('2d');
         new Chart(userGrowthBarCtx, {
             type: 'bar',
-            data: {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-                datasets: [{
-                    label: 'New Users (monthly)',
-                    data: [1200, 1500, 1600, 2000, 2200, 2400, 2600, 2500, 2800, 3000, 3100, 3200],
-                    backgroundColor: '#36a2eb'
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: { display: false },
-                    tooltip: { enabled: true }
-                },
-                scales: {
-                    y: { beginAtZero: true }
-                }
-            }
+            data: { labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], datasets: [{ label: 'New Users (monthly)', data: [1200, 1500, 1600, 2000, 2200, 2400, 2600, 2500, 2800, 3000, 3100, 3200], backgroundColor: '#36a2eb' }] },
+            options: { scales: { y: { beginAtZero: true } } }
+        });
+
+        // Additional Charts
+        // AI-Based Demand Forecast
+        const demandForecastCtx = document.getElementById('demandForecastChart').getContext('2d');
+        new Chart(demandForecastCtx, {
+            type: 'line',
+            data: { labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], datasets: [{ label: 'Predicted Demand', data: [200, 250, 300, 350, 450, 500, 550, 600, 650, 700, 750, 800], borderColor: '#ff9800', fill: false }] },
+            options: { scales: { y: { beginAtZero: true } } }
+        });
+
+        // Average Ride Matching Time
+        const matchingTimeCtx = document.getElementById('matchingTimeChart').getContext('2d');
+        new Chart(matchingTimeCtx, {
+            type: 'bar',
+            data: { labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], datasets: [{ label: 'Avg Matching Time (mins)', data: [8, 7, 6, 5, 4, 4, 3, 3, 3, 2, 2, 1], backgroundColor: '#4caf50' }] },
+            options: { scales: { y: { beginAtZero: true } } }
+        });
+
+        // Predicted User Satisfaction
+        const satisfactionCtx = document.getElementById('satisfactionChart').getContext('2d');
+        new Chart(satisfactionCtx, {
+            type: 'pie',
+            data: { labels: ['Satisfied', 'Neutral', 'Dissatisfied'], datasets: [{ label: 'Satisfaction Level', data: [70, 20, 10], backgroundColor: ['#36a2eb', '#ffcd56', '#ff6384'] }] }
+        });
+
+        // Completed Rides vs Cancellations
+        const ridesCancellationsCtx = document.getElementById('ridesCancellationsChart').getContext('2d');
+        new Chart(ridesCancellationsCtx, {
+            type: 'doughnut',
+            data: { labels: ['Completed Rides', 'Cancellations'], datasets: [{ label: 'Rides', data: [85, 15], backgroundColor: ['#1e90ff', '#ff6384'] }] }
         });
     </script>
 </body>
