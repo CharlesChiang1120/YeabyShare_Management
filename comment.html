@@ -1,265 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>YeabyShare Backend System</title>
     <style>
-        /* Main Content styling */
-        main {
-            flex: 1;
-            padding: 20px;
-            background-color: #f6f8fa;
-            overflow-y: auto;
-        }
+      /* Main Content styling */
+      main {
+        flex: 1;
+        padding: 20px;
+        background-color: #f6f8fa;
+        overflow-y: auto;
+      }
 
-        main h1 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #2c3e50;
-        }
+      main h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #2c3e50;
+      }
 
-        /* Comments styling - scoped only within main */
-        main .comment-section {
-            margin-bottom: 30px;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
+      /* Comments styling - scoped only within main */
+      main .comment-section {
+        margin-bottom: 30px;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
 
-        main .comment-section h3 {
-            margin-bottom: 10px;
-            color: #2c3e50;
-        }
+      main .comment-section h3 {
+        margin-bottom: 10px;
+        color: #2c3e50;
+      }
 
-        main .comments,
-        main .summary {
-            margin-top: 10px;
-            margin-left: 10px;
-            background-color: #eaf1f5;
-            padding: 15px;
-            border-radius: 8px;
-            overflow-wrap: break-word;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: calc(100% - 20px);
-        }
+      main .comments,
+      main .summary {
+        margin-top: 10px;
+        margin-left: 10px;
+        background-color: #eaf1f5;
+        padding: 15px;
+        border-radius: 8px;
+        overflow-wrap: break-word;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: calc(100% - 20px);
+      }
 
-        main .comment {
-            padding: 10px;
-            background-color: #ffffff;
-            border: 3px solid #d8dee9;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
+      main .comment {
+        padding: 10px;
+        background-color: #ffffff;
+        border: 3px solid #d8dee9;
+        border-radius: 8px;
+        margin-bottom: 10px;
+      }
 
-        main .comment strong {
-            color: #4c566a;
-        }
+      main .comment strong {
+        color: #4c566a;
+      }
 
-        /* Sentiment label styling */
-        main .sentiment-label {
-            display: inline-block;
-            padding: 3px 8px;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            margin-left: 10px;
-        }
+      /* Sentiment label styling */
+      main .sentiment-label {
+        display: inline-block;
+        padding: 3px 8px;
+        border-radius: 5px;
+        font-size: 0.9rem;
+        font-weight: bold;
+        margin-left: 10px;
+      }
 
-        main .sentiment-label.positive {
-            color: #2c7a7b;
-            background-color: #e6fffa;
-            border: 1px solid #2c7a7b;
-        }
+      main .sentiment-label.positive {
+        color: #2c7a7b;
+        background-color: #e6fffa;
+        border: 1px solid #2c7a7b;
+      }
 
-        main .sentiment-label.negative {
-            color: #c53030;
-            background-color: #ffe6e6;
-            border: 1px solid #c53030;
-        }
+      main .sentiment-label.negative {
+        color: #c53030;
+        background-color: #ffe6e6;
+        border: 1px solid #c53030;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <!-- Sidebar Section -->
-        <aside>
-            <div class="toggle">
-                <div class="logo">
-                    <h2>YeabyShare</h2>
-                </div>
-                <div class="close" id="close-btn">
-                    <span class="material-icons-sharp">close</span>
-                </div>
-            </div>
-            <div class="sidebar">
-                <a href="index.html">
-                    <span class="material-icons-sharp">insights</span>
-                    <h3>Analytics</h3>
-                </a>
-                <a href="dashboard.html">
-                    <span class="material-icons-sharp">dashboard</span>
-                    <h3>Dashboard</h3>
-                </a>
-                <a href="user.html">
-                    <span class="material-icons-sharp">person_outline</span>
-                    <h3>Users</h3>
-                </a>
-                <a href="history.html">
-                    <span class="material-icons-sharp">receipt_long</span>
-                    <h3>History</h3>
-                </a>
-                <a href="track.html">
-                    <span class="material-icons-sharp">sensors</span>
-                    <h3>Tracking</h3>
-                </a>
-                <a href="comment.html" class="active">
-                    <span class="material-icons-sharp">comment</span>
-                    <h3>Comment</h3>
-                </a>
-                <a href="sale.html">
-                    <span class="material-icons-sharp">inventory</span>
-                    <h3>Marketing</h3>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">report_gmailerrorred</span>
-                    <h3>Reports</h3>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">settings</span>
-                    <h3>Settings</h3>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">add</span>
-                    <h3>New Item</h3>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">logout</span>
-                    <h3>Logout</h3>
-                </a>
-            </div>
-        </aside>
-
-        <!-- Main Content Section -->
-        <main>
-            <h1>Comments and Feedback</h1>
-
-            <!-- Feedback on Passengers and Drivers -->
-            <div class="comment-section">
-                <h3>User Comments on Passengers and Drivers</h3>
-                <div class="comments">
-                    <div class="comment">
-                        <p>"The driver was courteous, but the pickup point was confusing."</p>
-                    </div>
-                    <div class="comment">
-                        <p>"The ride was smooth, and the car was clean. Very satisfied!"</p>
-                    </div>
-                    <div class="comment">
-                        <p>"It would be great to have more communication options with the driver."</p>
-                    </div>
-                    <div class="comment">
-                        <p>"The journey was longer than expected due to traffic delays."</p>
-                    </div>
-                    <div class="comment">
-                        <p>"Driver was helpful and friendly, but I wish there were more pickup points."</p>
-                    </div>
-                    <div class="comment">
-                        <p>"The app made it easy to find my driver, and they arrived on time!"</p>
-                    </div>
-                    <div class="comment">
-                        <p>"Driver was polite, but there was a lot of traffic along the route."</p>
-                    </div>
-                    <div class="comment">
-                        <p>"Fantastic service! The driver was friendly and professional."</p>
-                    </div>
-                    <div class="comment">
-                        <p>"The pickup location could be more precise. Slightly confusing."</p>
-                    </div>
-                    <div class="comment">
-                        <p>"Good experience overall, but wish there was a better route selection."</p>
-                    </div>
-                </div>
-                <div class="summary">
-                    <h3>Summary of Passenger/Driver Feedback 
-                        <span class="sentiment-label positive">Positive</span>
-                    </h3>
-                    <ul>
-                        <li>Clearer pickup point instructions</li>
-                        <li>Better communication with drivers</li>
-                        <li>Shorter wait times</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Feedback on YeabyShare Service -->
-            <div class="comment-section">
-                <h3>User Comments on YeabyShare</h3>
-                <div class="comments">
-                    <div class="comment">
-                        <p>"User-friendly app but lags sometimes on older devices."</p>
-                    </div>
-                    <div class="comment">
-                        <p>"Tracking feature provides peace of mind, excellent feature!"</p>
-                    </div>
-                    <div class="comment">
-                        <p>"Adding more payment options would be helpful."</p>
-                    </div>
-                    <div class="comment">
-                        <p>"Notifications are very useful for keeping me updated on ride status."</p>
-                    </div>
-                    <div class="comment">
-                        <p>"Customer support could be a bit quicker to respond."</p>
-                    </div>
-                    <div class="comment">
-                        <p>"Love the app design, it's very intuitive!"</p>
-                    </div>
-                    <div class="comment">
-                        <p>"It would be nice to have more discount options available."</p>
-                    </div>
-                    <div class="comment">
-                        <p>"Sometimes I miss notifications; perhaps louder alerts?"</p>
-                    </div>
-                    <div class="comment">
-                        <p>"The app is overall great but crashes occasionally on my phone."</p>
-                    </div>
-                    <div class="comment">
-                        <p>"Wish the app had better integration with calendar events."</p>
-                    </div>
-                </div>
-                <div class="summary">
-                    <h3>Summary of YeabyShare Feedback 
-                        <span class="sentiment-label negative">Negative</span>
-                    </h3>
-                    <ul>
-                        <li>App performance on older devices</li>
-                        <li>Desire for additional payment methods</li>
-                        <li>Improved notifications for tracking</li>
-                    </ul>
-                </div>
-            </div>
-        </main>
-        <div class="right-section">
-            <div class="nav">
-                <button id="menu-btn">
-                    <span class="material-icons-sharp">menu</span>
-                </button>
-                <div class="dark-mode">
-                    <span class="material-icons-sharp active">light_mode</span>
-                    <span class="material-icons-sharp">dark_mode</span>
-                </div>
-                <div class="profile">
-                    <div class="info">
-                        <p>Admin <b>Charles</b></p>
-                    </div>
-                    <div class="profile-photo">
-                        <img src="images/charles.png">
-                    </div>
-                </div>
-            </div>
+      <!-- Sidebar Section -->
+      <aside>
+        <div class="toggle">
+          <div class="logo">
+            <h2>YeabyShare</h2>
+          </div>
+          <div class="close" id="close-btn">
+            <span class="material-icons-sharp">close</span>
+          </div>
         </div>
+        <div class="sidebar">
+          <a href="index.html">
+            <span class="material-icons-sharp">insights</span>
+            <h3>Analytics</h3>
+          </a>
+          <a href="dashboard.html">
+            <span class="material-icons-sharp">dashboard</span>
+            <h3>Dashboard</h3>
+          </a>
+          <a href="user.html">
+            <span class="material-icons-sharp">person_outline</span>
+            <h3>Users</h3>
+          </a>
+          <a href="history.html">
+            <span class="material-icons-sharp">receipt_long</span>
+            <h3>History</h3>
+          </a>
+          <a href="track.html">
+            <span class="material-icons-sharp">sensors</span>
+            <h3>Tracking</h3>
+          </a>
+          <a href="comment.html" class="active">
+            <span class="material-icons-sharp">comment</span>
+            <h3>Comment</h3>
+          </a>
+          <a href="marketing.html">
+            <span class="material-icons-sharp">inventory</span>
+            <h3>Marketing</h3>
+          </a>
+          <a href="reports.html">
+            <span class="material-icons-sharp">report_gmailerrorred</span>
+            <h3>Reports</h3>
+          </a>
+          <a href="setting.html">
+            <span class="material-icons-sharp">settings</span>
+            <h3>Settings</h3>
+          </a>
+          <a href="#">
+            <span class="material-icons-sharp">add</span>
+            <h3>New Item</h3>
+          </a>
+          <a href="#">
+            <span class="material-icons-sharp">logout</span>
+            <h3>Logout</h3>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main Content Section -->
+      <main>
+        <!-- <h1>Comments and Feedback</h1> -->
+
+        <!-- Feedback on Passengers and Drivers -->
+        <div class="comment-section">
+          <h3>User Comments on Passengers and Drivers</h3>
+          <div class="comments">
+            <div class="comment">
+              <p>
+                "The driver was courteous, but the pickup point was confusing."
+              </p>
+            </div>
+            <div class="comment">
+              <p>
+                "The ride was smooth, and the car was clean. Very satisfied!"
+              </p>
+            </div>
+            <div class="comment">
+              <p>
+                "It would be great to have more communication options with the
+                driver."
+              </p>
+            </div>
+            <div class="comment">
+              <p>
+                "The journey was longer than expected due to traffic delays."
+              </p>
+            </div>
+            <div class="comment">
+              <p>
+                "Driver was helpful and friendly, but I wish there were more
+                pickup points."
+              </p>
+            </div>
+            <div class="comment">
+              <p>
+                "The app made it easy to find my driver, and they arrived on
+                time!"
+              </p>
+            </div>
+            <div class="comment">
+              <p>
+                "Driver was polite, but there was a lot of traffic along the
+                route."
+              </p>
+            </div>
+            <div class="comment">
+              <p>
+                "Fantastic service! The driver was friendly and professional."
+              </p>
+            </div>
+            <div class="comment">
+              <p>
+                "The pickup location could be more precise. Slightly confusing."
+              </p>
+            </div>
+            <div class="comment">
+              <p>
+                "Good experience overall, but wish there was a better route
+                selection."
+              </p>
+            </div>
+          </div>
+          <div class="summary">
+            <h3>
+              Summary of Passenger/Driver Feedback
+              <span class="sentiment-label positive">Positive</span>
+            </h3>
+            <ul>
+              <li>Clearer pickup point instructions</li>
+              <li>Better communication with drivers</li>
+              <li>Shorter wait times</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Feedback on YeabyShare Service -->
+        <div class="comment-section">
+          <h3>User Comments on YeabyShare</h3>
+          <div class="comments">
+            <div class="comment">
+              <p>"User-friendly app but lags sometimes on older devices."</p>
+            </div>
+            <div class="comment">
+              <p>
+                "Tracking feature provides peace of mind, excellent feature!"
+              </p>
+            </div>
+            <div class="comment">
+              <p>"Adding more payment options would be helpful."</p>
+            </div>
+            <div class="comment">
+              <p>
+                "Notifications are very useful for keeping me updated on ride
+                status."
+              </p>
+            </div>
+            <div class="comment">
+              <p>"Customer support could be a bit quicker to respond."</p>
+            </div>
+            <div class="comment">
+              <p>"Love the app design, it's very intuitive!"</p>
+            </div>
+            <div class="comment">
+              <p>"It would be nice to have more discount options available."</p>
+            </div>
+            <div class="comment">
+              <p>"Sometimes I miss notifications; perhaps louder alerts?"</p>
+            </div>
+            <div class="comment">
+              <p>
+                "The app is overall great but crashes occasionally on my phone."
+              </p>
+            </div>
+            <div class="comment">
+              <p>"Wish the app had better integration with calendar events."</p>
+            </div>
+          </div>
+          <div class="summary">
+            <h3>
+              Summary of YeabyShare Feedback
+              <span class="sentiment-label negative">Negative</span>
+            </h3>
+            <ul>
+              <li>App performance on older devices</li>
+              <li>Desire for additional payment methods</li>
+              <li>Improved notifications for tracking</li>
+            </ul>
+          </div>
+        </div>
+      </main>
+      <div class="right-section">
+        <div class="nav">
+          <button id="menu-btn">
+            <span class="material-icons-sharp">menu</span>
+          </button>
+          <div class="dark-mode">
+            <span class="material-icons-sharp active">light_mode</span>
+            <span class="material-icons-sharp">dark_mode</span>
+          </div>
+          <div class="profile">
+            <div class="info">
+              <p>Admin <b>Charles</b></p>
+            </div>
+            <div class="profile-photo">
+              <img src="images/charles.png" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>

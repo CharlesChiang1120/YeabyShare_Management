@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reports - YeabyShare</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Main content styling */
+      main {
+        flex: 1;
+        padding: 40px;
+      }
+
+      main h1 {
+        font-size: 2.2rem;
+        color: #2c3e50;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      /* Table styling */
+      .table-section {
+        margin-bottom: 30px;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .table-section h2 {
+        font-size: 1.5rem;
+        color: #2c3e50;
+        margin-bottom: 15px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+      }
+
+      th,
+      td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #eeeeee;
+        text-align: center;
+      }
+
+      th {
+        background-color: #5e81ac;
+        color: #ffffff;
+        font-weight: 600;
+      }
+
+      td {
+        background-color: #f9fafc;
+        color: #333333;
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Sidebar Section -->
+      <aside>
+        <div class="toggle">
+          <div class="logo">
+            <h2>YeabyShare</h2>
+          </div>
+        </div>
+        <div class="sidebar">
+          <a href="index.html">
+            <span class="material-icons-sharp">insights</span>
+            <h3>Analytics</h3>
+          </a>
+          <a href="dashboard.html">
+            <span class="material-icons-sharp">dashboard</span>
+            <h3>Dashboard</h3>
+          </a>
+          <a href="user.html">
+            <span class="material-icons-sharp">person_outline</span>
+            <h3>Users</h3>
+          </a>
+          <a href="history.html">
+            <span class="material-icons-sharp">receipt_long</span>
+            <h3>History</h3>
+          </a>
+          <a href="track.html">
+            <span class="material-icons-sharp">sensors</span>
+            <h3>Tracking</h3>
+          </a>
+          <a href="comment.html">
+            <span class="material-icons-sharp">comment</span>
+            <h3>Comment</h3>
+          </a>
+          <a href="marketing.html">
+            <span class="material-icons-sharp">inventory</span>
+            <h3>Marketing</h3>
+          </a>
+          <a href="reports.html" class="active">
+            <span class="material-icons-sharp">report_gmailerrorred</span>
+            <h3>Reports</h3>
+          </a>
+          <a href="setting.html">
+            <span class="material-icons-sharp">settings</span>
+            <h3>Settings</h3>
+          </a>
+          <a href="#">
+            <span class="material-icons-sharp">add</span>
+            <h3>New Item</h3>
+          </a>
+          <a href="#">
+            <span class="material-icons-sharp">logout</span>
+            <h3>Logout</h3>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main Content Section -->
+      <main>
+        <!-- <h1>Platform Reports</h1> -->
+
+        <!-- Usage Trends Report -->
+        <div class="table-section">
+          <h2>Usage Trends</h2>
+          <table>
+            <tr>
+              <th>Metric</th>
+              <th>Value</th>
+            </tr>
+            <tr>
+              <td>Active Users (Daily)</td>
+              <td>5,200</td>
+            </tr>
+            <tr>
+              <td>Trips Booked (Monthly)</td>
+              <td>23,500</td>
+            </tr>
+            <tr>
+              <td>Region with Highest Demand</td>
+              <td>Taipei</td>
+            </tr>
+            <tr>
+              <td>Average Trip Duration</td>
+              <td>35 mins</td>
+            </tr>
+            <tr>
+              <td>Most Frequent Users (Monthly)</td>
+              <td>3,400</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Popular Events Report -->
+        <div class="table-section">
+          <h2>Most Popular Events</h2>
+          <table>
+            <tr>
+              <th>Event Name</th>
+              <th>Attendees</th>
+            </tr>
+            <tr>
+              <td>Music Festival</td>
+              <td>2,500</td>
+            </tr>
+            <tr>
+              <td>City Marathon</td>
+              <td>1,800</td>
+            </tr>
+            <tr>
+              <td>Food Expo</td>
+              <td>1,200</td>
+            </tr>
+            <tr>
+              <td>Tech Conference</td>
+              <td>1,000</td>
+            </tr>
+            <tr>
+              <td>Charity Walk</td>
+              <td>900</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Event Types Report -->
+        <div class="table-section">
+          <h2>Event Types Distribution</h2>
+          <table>
+            <tr>
+              <th>Event Type</th>
+              <th>Percentage</th>
+            </tr>
+            <tr>
+              <td>Concerts</td>
+              <td>30%</td>
+            </tr>
+            <tr>
+              <td>Sports</td>
+              <td>25%</td>
+            </tr>
+            <tr>
+              <td>Food & Beverage</td>
+              <td>20%</td>
+            </tr>
+            <tr>
+              <td>Outdoor Activities</td>
+              <td>15%</td>
+            </tr>
+            <tr>
+              <td>Exhibitions</td>
+              <td>10%</td>
+            </tr>
+            <tr>
+              <td>Workshops</td>
+              <td>5%</td>
+            </tr>
+          </table>
+        </div>
+      </main>
+      <div class="right-section">
+        <div class="nav">
+          <button id="menu-btn">
+            <span class="material-icons-sharp">menu</span>
+          </button>
+          <div class="dark-mode">
+            <span class="material-icons-sharp active">light_mode</span>
+            <span class="material-icons-sharp">dark_mode</span>
+          </div>
+          <div class="profile">
+            <div class="info">
+              <p>Admin <b>Charles</b></p>
+            </div>
+            <div class="profile-photo">
+              <img src="images/charles.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
