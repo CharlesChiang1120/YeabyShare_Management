@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings - YeabyShare</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Main content styling */
+      main {
+        flex: 1;
+        padding: 30px;
+      }
+
+      main h1 {
+        font-size: 2rem;
+        color: #2c3e50;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      .settings-section {
+        background-color: #ffffff;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+
+      .settings-section h2 {
+        font-size: 1.5rem;
+        color: #2c3e50;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #eeeeee;
+        padding-bottom: 5px;
+      }
+
+      .setting-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 0;
+        padding: 10px;
+        background-color: #f8fafb;
+        border-radius: 8px;
+      }
+
+      .setting-item label {
+        font-size: 1rem;
+        color: #555;
+      }
+
+      .setting-item input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+      }
+
+      .setting-item select,
+      .setting-item input[type="text"] {
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        width: 60%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sidebar Section -->
+      <aside>
+        <div class="logo">
+          <h2>YeabyShare</h2>
+        </div>
+        <div class="sidebar">
+          <a href="index.html">
+            <span class="material-icons-sharp">insights</span>
+            <h3>Analytics</h3>
+          </a>
+          <a href="dashboard.html">
+            <span class="material-icons-sharp">dashboard</span>
+            <h3>Dashboard</h3>
+          </a>
+          <a href="user.html">
+            <span class="material-icons-sharp">person_outline</span>
+            <h3>Users</h3>
+          </a>
+          <a href="history.html">
+            <span class="material-icons-sharp">receipt_long</span>
+            <h3>History</h3>
+          </a>
+          <a href="track.html">
+            <span class="material-icons-sharp">sensors</span>
+            <h3>Tracking</h3>
+          </a>
+          <a href="comment.html">
+            <span class="material-icons-sharp">comment</span>
+            <h3>Comment</h3>
+          </a>
+          <a href="marketing.html">
+            <span class="material-icons-sharp">inventory</span>
+            <h3>Marketing</h3>
+          </a>
+          <a href="reports.html">
+            <span class="material-icons-sharp">report_gmailerrorred</span>
+            <h3>Reports</h3>
+          </a>
+          <a href="setting.html" class="active">
+            <span class="material-icons-sharp">settings</span>
+            <h3>Settings</h3>
+          <a href="#">
+            <span class="material-icons-sharp">add</span>
+            <h3>New Item</h3>
+          </a>
+          <a href="#">
+            <span class="material-icons-sharp">logout</span>
+            <h3>Logout</h3>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main Content Section -->
+      <main>
+        <!-- <h1>Settings</h1> -->
+
+        <!-- User Preferences -->
+        <div class="settings-section">
+          <h2>User Preferences</h2>
+          <div class="setting-item">
+            <label for="notifications">Enable Notifications</label>
+            <input type="checkbox" id="notifications" />
+          </div>
+          <div class="setting-item">
+            <label for="language">Preferred Language</label>
+            <select id="language">
+              <option>English</option>
+              <option>Traditional Chinese</option>
+              <option>French</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Privacy & Security -->
+        <div class="settings-section">
+          <h2>Privacy & Security</h2>
+          <div class="setting-item">
+            <label for="privacy">Data Sharing with Partners</label>
+            <input type="checkbox" id="privacy" />
+          </div>
+          <div class="setting-item">
+            <label for="twoFactor">Enable Two-Factor Authentication</label>
+            <input type="checkbox" id="twoFactor" />
+          </div>
+        </div>
+
+        <!-- Account Management -->
+        <div class="settings-section">
+          <h2>Account Management</h2>
+          <div class="setting-item">
+            <label for="profile">Edit Profile Information</label>
+            <input type="text" id="profile" placeholder="Update Profile" />
+          </div>
+          <div class="setting-item">
+            <label for="paymentMethods">Manage Payment Methods</label>
+            <select id="paymentMethods">
+              <option>Add Payment Method</option>
+              <option>Remove Payment Method</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- System Settings -->
+        <div class="settings-section">
+          <h2>System Settings</h2>
+          <div class="setting-item">
+            <label for="apiKeys">API Keys</label>
+            <button>Generate</button>
+          </div>
+          <div class="setting-item">
+            <label for="userRoles">Manage User Roles</label>
+            <button>Configure</button>
+          </div>
+        </div>
+      </main>
+      <div class="right-section">
+        <div class="nav">
+            <button id="menu-btn">
+                <span class="material-icons-sharp">menu</span>
+            </button>
+            <div class="dark-mode">
+                <span class="material-icons-sharp active">light_mode</span>
+                <span class="material-icons-sharp">dark_mode</span>
+            </div>
+            <div class="profile">
+                <div class="info">
+                    <p>Admin <b>Charles</b></p>
+                </div>
+                <div class="profile-photo">
+                    <img src="images/charles.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+  </body>
+</html>
